@@ -1,0 +1,5 @@
+<% if flash[:notice] %>
+  <p class="alert alert_success"><%= flash[:notice] %></p>
+<% elsif flash[:alert] %>
+  <p class="alert alert_failure"><%= flash[:alert] %></p>
+<% end %>

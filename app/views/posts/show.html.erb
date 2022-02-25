@@ -1,0 +1,36 @@
+<div class="main_container">
+  <div class="information">
+    <h2>スケジュール詳細</h2>
+    <%= render "shared/flash" %>
+    <%= render "shared/error_messages", model: @post %>
+  </div>
+  <table>
+    <tr>
+      <th>タイトル</th>
+      <td><%= @post.title %></td>
+    </tr>
+    <tr>
+      <th>開始日</th>
+      <td><%= @post.start_date.to_formatted_s(:date_jp) %></td>
+    </tr>
+    <tr>
+      <th>投稿日時</th>
+      <td><%= @post.end_date.to_formatted_s(:date_jp) %></td>
+    </tr>
+    <tr>
+      <th>終日</th>
+      <td><%= all_day?(@post.all_day) %></td>
+    </tr>
+    <tr>
+      <th>スケジュールメモ</th>
+      <td><%= @post.memorandum %></td>
+    </tr>
+  </table>
+  <div>
+    <ul>
+      <li><%= link_to_posts("スケジュール一覧に戻る") %></li>
+      <li><%= link_to_post_edit("スケジュールを編集する", @post) %></li>
+      <li><%= link_to_post_destroy("スケジェールを削除", @post) %></li>
+    </ul>
+  </div>
+</div>

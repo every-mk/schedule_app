@@ -1,8 +1,6 @@
 module PostsHelper
   def all_day?(all_day)
-    if all_day
-      return "○"
-    end
+    return "○" if all_day
   end
 
   def link_to_posts(link_name)

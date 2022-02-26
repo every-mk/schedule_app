@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, {only: [:show, :edit, :update, :destroy]}
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
     @posts = Post.all
@@ -55,5 +55,5 @@ def set_post
 end
 
 def get_post_params
-  return params.require(:post).permit(:title, :start_date, :end_date, :all_day, :memorandum)
+  params.require(:post).permit(:title, :start_date, :end_date, :all_day, :memorandum)
 end

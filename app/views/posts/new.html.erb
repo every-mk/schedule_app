@@ -1,0 +1,8 @@
+<div class="main_container">
+  <div class="information">
+    <h2>スケジュール新規作成</h2>
+    <%= render "shared/flash" %>
+    <%= render "shared/error_messages", model: @post %>
+  </div>
+  <%= render "shared/input_form", submit_value: "スケジュールを新規登録する" %>
+</div>
